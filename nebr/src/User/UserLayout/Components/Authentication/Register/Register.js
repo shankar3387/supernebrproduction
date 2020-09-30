@@ -6,10 +6,13 @@ export default class Register extends Component {
         super(props);
         
         this.state = {
-          user_name:'',
-          email:'',
-          phone:'',
-          otp:''
+          items:{
+            user_name:'',
+            email:'',
+            phone:'',
+            otp:''
+          },
+          errorMessage:''
 
         }
 
@@ -18,15 +21,18 @@ export default class Register extends Component {
       updateChanges = (e) =>{
         let nam = e.target.name;
         let val = e.target.value;
-        this.setState({[nam]: val});
+        this.setState({items:{[nam]: val}});
       }
       onSubmit = async (e) =>{
         e.preventDefault();
         let res = await AuthSer.postRegistration(this.state);
+        if(res.error){
+          this.setState.errorMessage = res.message
+        }
         console.log(res);
-        let result = await AuthSer.getRegistration()
-        console.log('result', result)
-        console.log('object', this.state)
+        // let result = await AuthSer.getRegistration()
+        // console.log('result', result)
+        // console.log('object', this.state)
       }
     render() {
         return (
@@ -67,6 +73,7 @@ export default class Register extends Component {
                               </div>	
                             </div>	
                           </div>
+                          {this.state.errorMessage}
                         </div>
                         <button onClick={this.onSubmit} className="btn btn-lg btn-warning text-white btn-block text-uppercase" type="submit">Continue</button>
                         <div className="mt-4">
