@@ -35,7 +35,7 @@ const Style = {
       position                : 'relative',
       margin                  : '5% auto',
       width                   : '40%',
-      height                  : '80%',
+      height                  : '60%',
       padding                 : '20px',
       border                  : '1px solid rgba(0, 0, 0, .2)',
       background              : '#fff',

@@ -127,6 +127,8 @@ export default class Home extends React.Component{
     <div className="row">
       <div className="col-lg-9 p-0">
         <img src="images/bannermain.png" className="img-fluid" alt="supernebr" style={{height: 405, width: '100%'}} />
+        <div style={{position: "absolute", top: "40%",left: "10%",color: "white",fontSize: "35px"}}>Your Tagline Goes here</div> 
+        <p style={{position: "absolute", top: "55%",left: "10%",color: "#d4d1bc",fontSize: "10px"}}>lorem ipsum is simply dummy text of the printing and type scoring industry</p>  
       </div>
       <div className="col-lg-3 p-0">
         <div className="col-lg-12 pl-1 pr-0 pl-xs-0">
@@ -145,11 +147,13 @@ export default class Home extends React.Component{
           <div className="col">
             <div className="card-home">
               <img src={"../images/banner2.png"} alt='true' className="img-fluid" />
+              <p style={{position: "absolute", top: "40%",left: "30%",color: "white",fontSize: "15px"}}>Upcoming Pop-Up <br/>&nbsp;&nbsp;Shops in your <br/>&nbsp;&nbsp;&nbsp; community</p>
             </div>
           </div>
           <div className="col">
             <div className="card-home">
               <img src={"../images/banner2.png"} alt='true' className="img-fluid" />
+              <p style={{position: "absolute", top: "50%",left: "30%",color: "white",fontSize: "15px"}}>Upcoming Events</p>
             </div>
           </div>
         </div>
