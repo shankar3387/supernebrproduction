@@ -18,5 +18,11 @@ export default {
     postEmailValidation: async (data)=>{
       let res = await axios.post(`/Auth/emailValidation`,data);
         return res.data || [];
-    }
+    },
+
+    // getOtp: async() =>{
+    //   const http://login.bulksmsgateway.in/sendmessage.php?user=........&password=.......&mobile=........&message=.......&sender=.......&type=3
+    //   let res = await axios.post(`http://login.bulksmsgateway.in/sendmessage.php?`,data);
+    //   return res.data || [];
+    // }
   }

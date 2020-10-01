@@ -1,291 +1,269 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import * as $ from 'jquery';
 // import 'jquery.payment'
+import 'bootstrap/dist/css/bootstrap.css'
+import './sellerRegistration.css';
 export class SellerRegistration extends Component {
+	render() {
+		return (
+			<div>
+				<div className="section supplier-hero">
+					<div className="container">
+						<div className="description">
+							<div className="heading cover">Sell through India's Largest Reseller Platform</div>
+							<div className="sub-heading">
+								Our 1 Crore+ Resellers can boost your business through 7,00,00,000+ customers
+							</div>
+							<div className="become-supplier-link">
+								<a href="#Register" className="button w-button smoothscroll">
+									Become a Meesho Supplier
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="section why-sell-through-us">
+					<div className="container">
+						<div className="w-row">
+							<div className="column w-col w-col-6">
+								<div className="about-us-title">Why Sell through Meesho?</div>
+							</div>
+						</div>
+					</div>
+					<div className="why-sell-through-us-content container">
+						<div className="w-row">
+							<div className="column w-col w-col-4">
+								<div className="number-heading">7,00,00,000+ Customers</div>
+								<div className="number-description">
+									{/* react-text: 35 */}Meesho is the largest distribution network of{' '}
+									{/* /react-text */}
+									{/* react-text: 36 */}1{/* /react-text */}
+									{/* react-text: 37 */} Crore+ Resellers, selling to 7,00,00,000+ customers{/* /react-text */}
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+							<div className="column w-col w-col-4">
+								<div className="number-heading">Quick &amp; Secure Payments</div>
+								<div className="number-description">
+									Meesho charges commission only ‘after’ you make a sale and ensures timely payments
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+							<div className="column w-col w-col-4">
+								<div className="number-heading">Lowest Returns</div>
+								<div className="number-description">
+									Meesho has the lowest returns in the industry so you get maximum profit on your
+									products
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+							<div className="second-row column w-col w-col-4">
+								<div className="number-heading">Delivery Support</div>
+								<div className="number-description">
+									Meesho takes care of shipping and delivery so you can focus on your core business
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+							<div className="second-row column w-col w-col-4">
+								<div className="number-heading">Account Manager</div>
+								<div className="number-description">
+									Meesho provides you a dedicated account manager to grow your sales exponentially
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    render() {
-        return (
-          <div className="app-container mt-5" style={{backgroundColor: '#ffffff'}}>
-          {/* Page Content */}
-          <div className="container mt-5">
-            <div className="row">
-              <div className="col-lg-12 mb-3">
-                <h2>Create Seller Account</h2>
-              </div>
-            </div>
-          </div>
-          <div className="container seller_account">
-            <div className="row">
-              <div className="col-lg-6">
-                <h6 className="border_right"><span>Personal Information</span></h6>
-                <div className="row pt-3">
-                  <div className="col-lg-12">
-                    <ul className="no-bullets d-flex align-item-center">
-                      <li>
-                        <div className="form-check">
-                          <label className="form-check-label">
-                            <input type="radio" className="form-check-input" name="optradio" /><small>I'm a Community Member</small>
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="form-check ml-5">
-                          <label className="form-check-label">
-                            <input type="radio" className="form-check-input" name="optradio" /><small>I'm not a Community Member</small>
-                          </label>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>	
-                </div>
-                <div className="row pt-3">
-                  <div className="col-lg-8">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <div className="form-group">
-                          <input type="text" className="form-control" id name defaultValue placeholder="Your Name" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="form-group">
-                          <input type="email" className="form-control" id name defaultValue placeholder="Email" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="form-group">
-                          <input type="text" className="form-control" id name defaultValue placeholder="Phone" />
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="form-group">
-                          <input type="password" className="form-control" id name defaultValue placeholder="Password" />
-                        </div>
-                      </div>
-                    </div>	
-                  </div>
-                  <div className="col-lg-4">
-                    <div className>
-                      <div style={{}}>	
-                        <div id="image-preview" style={{width: '85% !important', height: '135px !important'}}>
-                          <input type="hidden" name="LogoURL" defaultValue />
-                          <img id="PhotoUrlImg" src="url.png" className="mCS_img_loaded" />
-                          <input type="file" name="image" id="image-upload" />
-                          <label htmlFor="image" id="image-label" />
-                        </div>
-                      </div>	
-                    </div>
-                  </div>
-                  <div className="col-lg-12">
-                    <small>We will send you a text to verify your phone. <br /> Message and Data rates may apply.</small>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <h6 className="border_right"><span>Shop Information</span></h6>
-                <div className="row pt-3">
-                  <div className="col-lg-12">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <div className="form-group">
-                          <input type="text" className="form-control" id name defaultValue placeholder="Shop Name" />
-                        </div>
-                      </div>
-                      <div className="col-lg-12">
-                        <div className="form-group">
-                          <input type="text" className="form-control" id name defaultValue placeholder="Shop Address Line 1" />
-                        </div>
-                      </div>
-                      <div className="col-lg-12">
-                        <div className="form-group">
-                          <input type="text" className="form-control" id name defaultValue placeholder="Shop Address Line 2" />
-                        </div>
-                      </div>
-                      <div className="col-lg-5">
-                        <div className="form-group">
-                          <input type="text" className="form-control" id name defaultValue placeholder="Shop Phone Number" />
-                        </div>
-                      </div>
-                      <div className="col-lg-7 pl-0">
-                        <div className="custom-file">
-                          <input type="file" className="custom-file-input" id="customFile" />
-                          <label className="custom-file-label" htmlFor="customFile">Upload Document</label>
-                        </div>
-                      </div>
-                      <div className="col-lg-12">
-                        <div className="form-group">
-                          <select className="form-control" id="sel1">
-                            <option>Select Community</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                          </select>
-                        </div>
-                      </div>	
-                    </div>	
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row pt-4">
-              <div className="col-lg-6">
-                <h6 className="border_right"><span>Bank Information</span></h6>
-                <div className="row pt-3">
-                  <div className="col-lg-12">
-                    <div className="form-group">
-                      <select className="form-control" id="sel1">
-                        <option disabled>Bank Location</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Bank Name" />
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Account Holder Name" />
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Account Number" />
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Retype Account Number" />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <h6 className="border_right"><span>Card Details</span></h6>
-                <div className="row pt-2">
-                  <div className="col-lg-12">
-                    <div className="row">
-                      <div className="col-lg-6">
-                        <div className="card">
-                          <label><small><b>Debit Card</b></small></label>
-                          <div className="card-body db-card p-2 rounded">
-                            <div className="col-lg-12">
-                              <div className="row">
-                                <div className="form-group col-lg-9 p-0"> 
-                                  <label htmlFor="cc-number" className="control-label"><small>Card Number</small></label> <input id="cc-number" type="tel" className="input-lg form-control cc-number" autoComplete="cc-number" placeholder="xxxx-xxxx-xxxx-xxxx" required />
-                                </div>
-                                <div className="form-group col-lg-3 p-0 d-flex justify-content-end pt-3">
-                                  <i className="fa fa-cc-visa" aria-hidden="true" />
-                                </div>
-                              </div>	
-                            </div>
-                            <div className="form-group col-lg-9 p-0">
-                              <label htmlFor="numeric" className="control-label"><small>Card Holder</small></label>
-                              <input type="text" className="input-lg form-control" placeholder="Your Name" />
-                            </div>
-                            <div className="row">
-                              <div className="col-lg-12">
-                                <div className="row">
-                                  <div className="col-lg-4 pr-0">
-                                    <div className="form-group"> <label htmlFor="cc-exp" className="control-label"><small>Card Through</small></label> <input id="cc-exp" type="tel" className="input-lg form-control cc-exp" autoComplete="cc-exp" placeholder="MM - DD" required /> </div>
-                                  </div>
-                                  <div className="col-lg-4 pr-0">
-                                    <div className="form-group"> <label htmlFor="cc-exp" className="control-label"><small>Expiry Date</small></label> <input id="cc-exp" type="tel" className="input-lg form-control cc-exp" autoComplete="cc-exp" placeholder="MM - DD" required /> </div>
-                                  </div>
-                                  <div className="col-lg-4">
-                                    <div className="form-group"> <label htmlFor="cc-cvc" className="control-label"><small>CVV</small></label> <input id="cc-cvc" type="tel" className="input-lg form-control cc-cvc" autoComplete="off" placeholder="••••" required /> </div>
-                                  </div>
-                                </div>	
-                              </div>	
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="card">
-                          <label><small><b>Credit Card</b></small></label>
-                          <div className="card-body db-card p-2 rounded">
-                            <div className="col-lg-12">
-                              <div className="row">
-                                <div className="form-group col-lg-9 p-0"> 
-                                  <label htmlFor="cc-number" className="control-label"><small>Card Number</small></label> <input id="cc-number" type="tel" className="input-lg form-control cc-number" autoComplete="cc-number" placeholder="xxxx-xxxx-xxxx-xxxx" required />
-                                </div>
-                                <div className="form-group col-lg-3 p-0 d-flex justify-content-end pt-3">
-                                  <i className="fa fa-cc-visa" aria-hidden="true" />
-                                </div>
-                              </div>	
-                            </div>
-                            <div className="form-group col-lg-9 p-0">
-                              <label htmlFor="numeric" className="control-label"><small>Card Holder</small></label>
-                              <input type="text" className="input-lg form-control" placeholder="Your Name" />
-                            </div>
-                            <div className="row">
-                              <div className="col-lg-12">
-                                <div className="row">
-                                  <div className="col-lg-4 pr-0">
-                                    <div className="form-group"> <label htmlFor="cc-exp" className="control-label"><small>Card Through</small></label> <input id="cc-exp" type="tel" className="input-lg form-control cc-exp" autoComplete="cc-exp" placeholder="MM - DD" required /> </div>
-                                  </div>
-                                  <div className="col-lg-4 pr-0">
-                                    <div className="form-group"> <label htmlFor="cc-exp" className="control-label"><small>Expiry Date</small></label> <input id="cc-exp" type="tel" className="input-lg form-control cc-exp" autoComplete="cc-exp" placeholder="MM - DD" required /> </div>
-                                  </div>
-                                  <div className="col-lg-4">
-                                    <div className="form-group"> <label htmlFor="cc-cvc" className="control-label"><small>CVV</small></label> <input id="cc-cvc" type="tel" className="input-lg form-control cc-cvc" autoComplete="off" placeholder="••••" required /> </div>
-                                  </div>
-                                </div>	
-                              </div>	
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>	
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row pt-4">
-              <div className="col-lg-6">
-                <h6 className="border_right"><span>Identity Information</span></h6>
-                <div className="row pt-3">
-                  <div className="col-lg-4 pr-0">
-                    <div className="form-group">
-                      <select className="form-control identity_inform" id>
-                        <option selected disabled>Select Identity</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="col-lg-4 pl-0 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="#" />
-                  </div>
-                  <div className="col-lg-4 pl-0 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Expiray Date" />
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Full Name" />
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Date of Birth" />
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Address Line 1" />
-                  </div>
-                  <div className="col-lg-12 form-group">
-                    <input type="text" className="form-control" id name defaultValue placeholder="Address Line 2" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-12">
-                <button className="btn btn-default bg-warning text-white" type="button">SUBMIT</button>
-                <button className="btn btn-default bg-warning text-white ml-3" type="button">CANCEL</button>
-              </div>	
-            </div>
-          </div>
-          {/* /#page-content-wrapper */}
-        </div>
-        
-        )
-    }
+				<div className="section supplier-how-to-works">
+					<div className="container">
+						<div className="w-row">
+							<div className="column w-col w-col-6">
+								<div className="about-us-title">How it Works?</div>
+							</div>
+						</div>
+					</div>
+					<div className="why-sell-through-us-content container">
+						<div className="w-row">
+							<div className="column w-col w-col-6">
+								<div className="number-heading">List Products on Meesho</div>
+								<div className="number-description">
+									Our team helps you list your products on Meesho. We give them priority space for
+									maximum visibility as they become popular
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+							<div className="column w-col w-col-6">
+								<div className="number-heading">Start Receiving Orders</div>
+								<div className="number-description">
+									As your products go Live on the app and our Resellers share them with their
+									WhatsApp, Facebook and Instagram contacts, you will start receiving orders
+									immediately
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+							<div className="second-row column w-col w-col-6">
+								<div className="number-heading">Delivery Handled by Meesho</div>
+								<div className="number-description">
+									We offer quick and convenient pick-up and delivery across India through our
+									logistics partners! All you need to do is pack the product and we do the rest
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+							<div className="second-row column w-col w-col-6">
+								<div className="number-heading">Receive Earnings</div>
+								<div className="number-description">
+									Payments are directly deposited to your bank account within a few days of shipping
+									the orders
+								</div>
+								<img
+									src="https://static.meeshosupply.com/web/images/highlight.png"
+									className="highlight"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="Register" className="section seller-form-fill-up">
+					<div className="container">
+						<div className="seller-stats column w-col w-col-6">
+							<div className="seller-form-header">More than 22,000 Suppliers Sell on Meesho</div>
+							<div className="seller-form-text">
+								Become a Meesho Supplier by filling in the registration form below. Once you submit the
+								form, our onboarding team will get in touch with you.
+							</div>
+							<div className="seller-form-text2">To be a Meesho Supplier, you need:</div>
+							<div className="seller-form-list">
+								<div>
+									<img src="https://static.meeshosupply.com/web/images/bullet-tick.png" />
+									<div>GST Identification Number (GSTIN)</div>
+								</div>
+								<div>
+									<img src="https://static.meeshosupply.com/web/images/bullet-tick.png" />
+									<div>PAN Card</div>
+								</div>
+								<div>
+									<img src="https://static.meeshosupply.com/web/images/bullet-tick.png" />
+									<div>Bank Account</div>
+								</div>
+							</div>
+							<div className="seller-form-text3">
+								Register using the form and we will get in touch with you soon!
+							</div>
+						</div>
+						<div className="seller-contact-us column w-col w-col-6">
+							<form className="seller-form" id="seller-form">
+								<div className="form-group">
+									<label className="control-label">Business Name*</label>
+									<input
+										type="text"
+										className="form-control"
+										name="name"
+										defaultValue
+										placeholder="Enter your business name"
+									/>
+								</div>
+								<div className="form-group">
+									<label className="control-label">Phone Number*</label>
+									<div className="input-group">
+										<span className="input-group-addon border-radius-none">+91</span>
+										<input
+											type="tel"
+											className="form-control"
+											name="phone"
+											defaultValue
+											placeholder="Enter your phone number"
+										/>
+									</div>
+								</div>
+								<div className="form-group">
+									<label className="control-label">Email</label>
+									<input
+										type="email"
+										className="form-control"
+										name="email"
+										defaultValue
+										placeholder="Enter your email"
+									/>
+								</div>
+                <div className="form-group">
+									<label className="control-label">Password*</label>
+									<div className="input-group">
+										<span className="input-group-addon border-radius-none">+91</span>
+										<input type="tel" className="form-control" name="phone" defaultValue placeholder="Enter The Password"
+										/>
+									</div>
+								</div>
+
+                <div className="form-group">
+									<label className="control-label">Confirmation Password*</label>
+									<div className="input-group">
+										<input type="tel" className="form-control" name="phone" defaultValue placeholder="Enter Confirmation Password"
+										/>
+									</div>
+								</div>
+								
+								<div className="form-group">
+									<label className="control-label">City*</label>
+									<input
+										type="text"
+										className="form-control"
+										name="city"
+										defaultValue
+										placeholder="Enter your city"
+									/>
+								</div>
+								<div className="form-group">
+									<label className="control-label inline-block" style={{ marginBottom: 0 }}>
+										Do you have a GSTIN?*
+									</label>
+									<div style={{ marginBottom: 0, marginTop: 15 }}>
+										<label className="radio-inline">
+											<input type="radio" name="gstin" defaultValue="on" />
+											{/* react-text: 145 */}Yes{/* /react-text */}
+										</label>
+										<label className="radio-inline">
+											<input type="radio" name="gstin" defaultValue="on" />
+											{/* react-text: 148 */}No{/* /react-text */}
+										</label>
+									</div>
+								</div>
+                <button className="button w-button supplier-submit" type="submit">
+									Register
+								</button>
+								<div className="text-center" />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
-export default SellerRegistration
+export default SellerRegistration;
