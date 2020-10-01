@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('registration');
+
 const express = require("express");
 const router = express.Router();
 
@@ -11,10 +12,9 @@ router.get(`/registration`, async(req, res) => {
 router.post(`/registration`, async(req, res) => {
     let isEmailExists = await Product.findOne({ email: req.body.email });
     if (isEmailExists) {
-        return res.status(404).send({
+        return res.status(200).send({
             error: true,
             message: 'email is exists',
-            product
         })
     }
     let product = await Product.create(req.body);
@@ -25,7 +25,15 @@ router.post(`/registration`, async(req, res) => {
     })
 
 })
-
+router.post('/emailValidation', async(req,res)=>{
+    console.log(req.body.email)
+    let isEmailExists = await Product.findOne({ email: req.body.email });
+    console.log(isEmailExists)
+    return res.status(200).send({
+        error: isEmailExists ? true : false,
+        message: isEmailExists ? 'email is exists': '',
+    })
+})
 router.put(`/api/product/:id`, async(req, res) => {
     const { id } = req.params;
 

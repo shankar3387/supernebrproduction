@@ -5,6 +5,8 @@ import BlogBoard from '../BlogBoard/BlogBoard';
 import CreateBlogsButton from '../BlogBoard/CreateBlogsButton';
 import CreatePollsButton from '../Polls/CreatePollsButton';
 import Bloggers from '../TopBloggers/Bloggers';
+import CommunityModal from '../CommunityModal/CommunityModal';
+import { Modal,ModalManager,Effect} from 'react-dynamic-modal';
 
 export default class Home extends React.Component{
     
@@ -113,6 +115,10 @@ export default class Home extends React.Component{
      blogsList = this.blogsArray.map(blogs=><BlogBoard blogs={blogs} />)
      BloggersList = this.BloggerArray.map(blogs=><Bloggers blogs={blogs} />)
 
+     componentDidMount(){
+      const text = 'test'
+      ModalManager.open(<CommunityModal text={text} onRequestClose={() => true}/>);
+     }
     render() {
         return (
             <div className="app-container" style={{marginTop: 19}}>

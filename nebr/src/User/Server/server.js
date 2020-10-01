@@ -13,6 +13,10 @@ export default {
 
     postLogin: async (data) =>{
         let res = await axios.post(`/Auth/login`,data);
-      return res.data || [];
+        return res.data || [];
+    },
+    postEmailValidation: async (data)=>{
+      let res = await axios.post(`/Auth/emailValidation`,data);
+        return res.data || [];
     }
   }

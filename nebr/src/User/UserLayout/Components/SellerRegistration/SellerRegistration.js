@@ -2,48 +2,19 @@ import React, { Component } from 'react'
 import * as $ from 'jquery';
 // import 'jquery.payment'
 export class SellerRegistration extends Component {
-    // componentDidMount(){
-    //     $(".megamenu").on("click", function(e) {
-	// 		e.stopPropagation();
-	// 	});
-	// 	// $.uploadPreview({
-	// 	// 	input_field:"#image-upload",
-	// 	// 	preview_box:"#image-preview",
-	// 	// 	label_field:"#image-label",
-	// 	// 	label_default:"",
-	// 	// 	label_selected:"",
-	// 	// 	success_callback:function(){
-	// 	// 		$("#image-preview img").hide();
-	// 	// 	}
-	// 	// });
-	// 	$(".custom-file-input").on("change", function() {
-	// 		var fileName = $(this).val().split("\\").pop();
-	// 		$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-	// 	});
-	// 	$(function($) {
-	// 		$('[data-numeric]').payment('restrictNumeric');
-	// 		$('.cc-number').payment('formatCardNumber');
-	// 		$('.cc-exp').payment('formatCardExpiry');
-	// 		$('.cc-cvc').payment('formatCardCVC');
-	// 		$.fn.toggleInputError = function(erred) {
-	// 		this.parent('.form-group').toggleClass('has-error', erred);
-	// 		return this;
-	// 		};
-	// 		$('form').submit(function(e) {
-	// 		e.preventDefault();
-	// 		var cardType = $.payment.cardType($('.cc-number').val());
-	// 		$('.cc-number').toggleInputError(!$.payment.validateCardNumber($('.cc-number').val()));
-	// 		$('.cc-exp').toggleInputError(!$.payment.validateCardExpiry($('.cc-exp').payment('cardExpiryVal')));
-	// 		$('.cc-cvc').toggleInputError(!$.payment.validateCardCVC($('.cc-cvc').val(), cardType));
-	// 		$('.cc-brand').text(cardType);
-	// 		$('.validation').removeClass('text-danger text-success');
-	// 		$('.validation').addClass($('.has-error').length ? 'text-danger' : 'text-success');
-	// 		});
-	// 		});
-    // }
+
     render() {
         return (
-            <div className="container seller_account mb-5">
+          <div className="app-container mt-5" style={{backgroundColor: '#ffffff'}}>
+          {/* Page Content */}
+          <div className="container mt-5">
+            <div className="row">
+              <div className="col-lg-12 mb-3">
+                <h2>Create Seller Account</h2>
+              </div>
+            </div>
+          </div>
+          <div className="container seller_account">
             <div className="row">
               <div className="col-lg-6">
                 <h6 className="border_right"><span>Personal Information</span></h6>
@@ -310,7 +281,9 @@ export class SellerRegistration extends Component {
               </div>	
             </div>
           </div>
-          
+          {/* /#page-content-wrapper */}
+        </div>
+        
         )
     }
 }

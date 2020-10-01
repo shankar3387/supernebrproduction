@@ -12,24 +12,38 @@ export default class Register extends Component {
             phone:'',
             otp:''
           },
-          errorMessage:''
+          errorMessage:'',
+          isExist:true
 
         }
 
 
       }
-      updateChanges = (e) =>{
+      updateChanges = async(e) =>{
         let nam = e.target.name;
         let val = e.target.value;
+        if(nam==='email'){
+          let res = await AuthSer.postEmailValidation({email:val});
+          this.setState({
+            isExist:res.error,
+            errorMessage:res.message
+
+          })
+        }
         this.setState({items:{[nam]: val}});
       }
       onSubmit = async (e) =>{
         e.preventDefault();
-        let res = await AuthSer.postRegistration(this.state);
-        if(res.error){
-          this.setState.errorMessage = res.message
+        if(!this.state.isExist){
+          let res = await AuthSer.postRegistration(this.state.items);
+          if(res.error){
+            this.setState({
+              errorMessage:res.message
+            })
+          }
         }
-        console.log(res);
+        
+        // console.log(res);
         // let result = await AuthSer.getRegistration()
         // console.log('result', result)
         // console.log('object', this.state)
@@ -54,26 +68,26 @@ export default class Register extends Component {
                           </select>
                         </div>
                         <div className="form-group">
-                          <input type="text" id className="form-control" name='user_name' onChange={this.updateChanges} placeholder="Your Name" required autofocus />
+                          <input required type="text" id className="form-control" name='user_name' onChange={this.updateChanges} placeholder="Your Name" required autofocus />
                         </div>
                         <div className="form-group">
                           <input name='email' type="email" id className="form-control" onChange={this.updateChanges} placeholder="Email" required />
+                          <div>{this.state.errorMessage}</div>
                         </div>
                         <div className="form-row form-group">
                           <div className="col">
-                            <input name='phone' type="text" className="form-control" onChange={this.updateChanges} placeholder="Phone"  />
+                            <input required name='phone' type="text" className="form-control" onChange={this.updateChanges} placeholder="Phone"  />
                           </div>
                           <div className="col">
                             <div className="row">
                               <div className="col-lg-9">
-                                <input name='otp' type="text" className="form-control" onChange={this.updateChanges} placeholder="OTP" />
+                                <input required name='otp' type="text" className="form-control" onChange={this.updateChanges} placeholder="OTP" />
                               </div>
                               <div className="col-lg-3 d-flex justify-content-center align-items-center">
                                 <i className="fa fa-refresh" aria-hidden="true" />
                               </div>	
                             </div>	
                           </div>
-                          {this.state.errorMessage}
                         </div>
                         <button onClick={this.onSubmit} className="btn btn-lg btn-warning text-white btn-block text-uppercase" type="submit">Continue</button>
                         <div className="mt-4">
